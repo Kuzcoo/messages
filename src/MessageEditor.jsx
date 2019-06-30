@@ -1,6 +1,6 @@
 import React from "react";
 import "./MessageEditor.css";
-import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
+import SvgPadLock from "./SvgPadLock";
 
 export default class MessageEditor extends React.Component {
   constructor(props) {
@@ -50,7 +50,8 @@ export default class MessageEditor extends React.Component {
     this.props.onNewMessage({
       isPrivate: checked,
       text: value,
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      justAdded: true
     });
 
     this.resetErrorState();
@@ -64,7 +65,7 @@ export default class MessageEditor extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="message-editor">
-        <label className="message-editor__label" for="new-message">Ecrire un message</label>
+        <label className="message-editor__label" htmlFor="new-message">Ecrire un message</label>
         <textarea
           onChange={this.handleChange}
           id="new-message"
@@ -74,7 +75,8 @@ export default class MessageEditor extends React.Component {
         />
         <p className="message-editor__actions">
           <input id="private" ref={this.checkboxRef} type="checkbox" />
-          <label for="private" className="message-editor__visibility">
+          <label htmlFor="private" className="message-editor__visibility">
+            <SvgPadLock />
             Message privé
           </label>
           <input

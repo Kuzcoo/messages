@@ -1,10 +1,16 @@
 main > header {
+  padding-top: 1rem;
   background-color: #fff;
 }
 
+main > header.scrolled .title {
+  display: none;
+}
+
 .title {
+  margin-bottom: 2rem;
   font-weight: normal;
-  margin: 1rem 0 2rem 0;
+  color: orange;
 }
 
 .messages {

@@ -29,26 +29,46 @@
 }
 
 .message-editor__visibility,
-.message-editor input[type="checkbox"] {
-  vertical-align: bottom;
+input[type="checkbox"] {
+  vertical-align: middle;
 }
 
 .message-editor__visibility {
+  display: inline-flex;
+  align-items: flex-end;
   margin-left: 0.25rem;
+  fill: transparent;
+  border-color: #999;
+  font-size: 0.875rem;
+  cursor: pointer;
 }
 
-.message-editor > input[type="checkbox"] {
+.message-editor__visibility > svg {
+  margin-right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.25rem;
+  border: 2px solid;
+  border-radius: 4px;
+  border-color: inherit;
+  fill: inherit;
+}
+
+.message-editor input[type="checkbox"]:focus + .message-editor__visibility {
+  border-color: orange;
+}
+
+.message-editor input[type="checkbox"]:checked + .message-editor__visibility {
+  fill: #666;
+}
+
+.message-editor input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
   width: 1rem;
   height: 1rem;
 }
 
 .message-editor__submit {
   margin-left: 1rem;
-}
-
-@media screen and (max-width: 768px) {
-
-  .message-editor__text {
-    rows: 2;
-  }
 }

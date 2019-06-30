@@ -1,4 +1,5 @@
 import React from "react";
+import shortid from "shortid";
 import MessageEditor from "./MessageEditor";
 import MessageItem from "./MessageItem";
 import InfoMessage from "./InfoMessage";
@@ -10,6 +11,28 @@ export default class MessagesView extends React.Component {
     this.state = {
       messages: props.messages ? props.messages : []
     };
+
+    this.scroll = {
+      lastPositionY: null
+    };
+  }
+
+  componentDidMount() {
+    this.scroll.lastPositionY = window.pageYOffset;
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = (event) => {
+    if (window.pageYOffset > this.scroll.lastPositionY) {
+      this.setState({
+        shouldReduceHeader: true
+      });
+    } else {
+      this.setState({
+        shouldReduceHeader: false
+      });
+    }
+    this.scroll.lastPositionY = window.pageYOffset;
   }
 
   createMessage = message => {
@@ -49,15 +72,18 @@ export default class MessagesView extends React.Component {
     }
 
     // extraire ??
-    return messages.map(MessageItem);
+    return messages.map(({ timestamp, ...other }) => (
+      <MessageItem key={timestamp} timestamp={timestamp} {...other} />
+    ));
   }
 
   render() {
     const messageList = this.getMessagesList();
+    const { shouldReduceHeader } = this.state;
 
     return (
       <main>
-        <header>
+        <header className={shouldReduceHeader ? "scrolled": null}>
           <h2 className="title">LiveMessages</h2>
           <MessageEditor
             className="app-message-editor"
