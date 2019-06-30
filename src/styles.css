@@ -20,6 +20,7 @@ h2 {
 }
 
 .button {
+  appearance: none;
   padding: 0.5rem 1.5rem;
   border: 0;
   border-radius: 4px;
@@ -54,4 +55,5 @@ main > header {
   top: 0;
   width: calc(100% - 2rem);
   max-width: calc(768px - 2rem);
+  z-index: 1;
 }
