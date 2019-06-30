@@ -3,8 +3,14 @@ main > header {
   background-color: #fff;
 }
 
+main > header.scrolled {
+  border-bottom: 1px solid #999;
+}
+
 main > header.scrolled .title {
-  display: none;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  text-align: right;
 }
 
 .title {
@@ -13,15 +19,22 @@ main > header.scrolled .title {
   color: orange;
 }
 
+.loader {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: #666;
+}
+
 .messages {
   margin-top: 14rem;
   overflow-y: auto;
 }
 
 .messages__title {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   font-size: 1rem;
   font-weight: normal;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid #666;
 }

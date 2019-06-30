@@ -11,28 +11,23 @@ export default class MessagesView extends React.Component {
     this.state = {
       messages: props.messages ? props.messages : []
     };
-
-    this.scroll = {
-      lastPositionY: null
-    };
   }
 
   componentDidMount() {
-    this.scroll.lastPositionY = window.pageYOffset;
     window.addEventListener("scroll", this.handleScroll);
   }
 
   handleScroll = (event) => {
-    if (window.pageYOffset > this.scroll.lastPositionY) {
+    const { pageYOffset } = window;
+    if (pageYOffset > 120 && !this.state.shouldReduceHeader) {
       this.setState({
         shouldReduceHeader: true
       });
-    } else {
+    } else if (pageYOffset < 120 && this.state.shouldReduceHeader) {
       this.setState({
         shouldReduceHeader: false
       });
     }
-    this.scroll.lastPositionY = window.pageYOffset;
   }
 
   createMessage = message => {
@@ -51,7 +46,7 @@ export default class MessagesView extends React.Component {
     const { loading, error } = this.props;
 
     if (loading) {
-      return <h3 style={{ fontWeight: "normal" }}>Chargement des messages...</h3>;
+      return <h3 className="loader">Chargement des messages...</h3>;
     }
 
     if (error) {
@@ -67,7 +62,7 @@ export default class MessagesView extends React.Component {
     if (messages.length === 0) {
       return (
         <InfoMessage
-          message="Publiez votre premier message en utilisant la zone de texte ci-dessus !" />
+          message="Vous n'avez aucun message à afficher." />
       );
     }
 
