@@ -1,0 +1,54 @@
+.message-editor {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.message-editor__label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.message-editor__text {
+  display: block;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 0;
+  border: 2px solid #999;
+  border-radius: 4px;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  resize: none;
+}
+
+.message-editor__text:focus {
+  border-color: orange;
+}
+
+.message-editor__actions {
+  text-align: right;
+}
+
+.message-editor__visibility,
+.message-editor input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+.message-editor__visibility {
+  margin-left: 0.25rem;
+}
+
+.message-editor > input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+}
+
+.message-editor__submit {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+
+  .message-editor__text {
+    rows: 2;
+  }
+}

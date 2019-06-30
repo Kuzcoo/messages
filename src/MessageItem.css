@@ -1,0 +1,35 @@
+.message {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+.message__infos {
+  margin-bottom: 1rem;
+}
+
+.message__thumbnail {
+  display: inline-block;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #aaa;
+}
+
+.message__info {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.message svg {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 1rem;
+  height: 1rem;
+  fill: #666;
+}

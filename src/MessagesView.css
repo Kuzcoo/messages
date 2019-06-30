@@ -1,0 +1,21 @@
+main > header {
+  background-color: #fff;
+}
+
+.title {
+  font-weight: normal;
+  margin: 1rem 0 2rem 0;
+}
+
+.messages {
+  margin-top: 14rem;
+  overflow-y: auto;
+}
+
+.messages__title {
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  border-bottom: 1px solid #999;
+}
