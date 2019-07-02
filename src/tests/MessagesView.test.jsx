@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { createMessagesWithTimeStamp } from "./utils";
-import MessagesView from "../MessagesView";
+import MessagesView from "../features/messages/MessagesView";
 
 describe("MessagesView", () => {
   it("should pass", () => {

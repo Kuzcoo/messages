@@ -1,6 +1,6 @@
 import React from "react";
 import "./MessageEditor.css";
-import SvgPadLock from "./SvgPadLock";
+import SvgPadLock from "../../components/icons/SvgPadLock";
 
 export default class MessageEditor extends React.Component {
   constructor(props) {

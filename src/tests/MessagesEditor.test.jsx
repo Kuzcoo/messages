@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import { fillMessage } from "./utils";
-import MessageEditor from "../MessageEditor";
+import MessageEditor from "../features/messages/MessageEditor";
 
 describe("MessagesView", () => {
   it("should pass", () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./MessageItem.css";
-import SvgPadLock from "./SvgPadLock";
+import SvgPadLock from "../../components/icons/SvgPadLock";
 
 export default class MessageItem extends React.Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React from "react";
-import withService from "./withService";
+import withService from "../../utils/withService";
 import MessagesService from "./MessagesService";
 
 export class FetchMessages extends React.PureComponent {

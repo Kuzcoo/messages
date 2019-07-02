@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import withService from "./withService";
-import MessagesService from "./MessagesService";
-import FetchMessages from "./FetchMessages";
-import MessagesView from "./MessagesView";
+import withService from "./utils/withService";
+import MessagesService from "./features/messages/MessagesService";
+import FetchMessages from "./features/messages/FetchMessages";
+import MessagesView from "./features/messages/MessagesView";
 
 import "./styles.css";
 

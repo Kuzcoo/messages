@@ -1,8 +1,7 @@
 import React from "react";
-import shortid from "shortid";
+import { InfoMessage } from "../../components";
 import MessageEditor from "./MessageEditor";
 import MessageItem from "./MessageItem";
-import InfoMessage from "./InfoMessage";
 import "./MessagesView.css";
 
 export default class MessagesView extends React.Component {
